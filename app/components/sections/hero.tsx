@@ -117,7 +117,7 @@ export default function Hero() {
 
         <div className="mt-10 flex justify-center">
           <Link
-            href="mailto:your@email.com"
+            href="mailto:chahanc1204@gmail.com"
             className="
             flex
             items-center

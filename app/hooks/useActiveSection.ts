@@ -6,24 +6,29 @@ export function useActiveSection() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[id]");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      },
-    );
+      let current = "";
 
-    sections.forEach((section) => observer.observe(section));
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
 
-    return () => observer.disconnect();
+        // ✅ trigger when section reaches top + 80px offset
+        if (rect.top <= 80 && rect.bottom >= 80) {
+          current = section.id;
+        }
+      });
+
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // run once on load
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return activeSection;

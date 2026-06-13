@@ -7,7 +7,7 @@ import Link from "next/link";
 import ThemeToggle from "./themeToggle";
 
 const links = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Education", href: "#education" },
