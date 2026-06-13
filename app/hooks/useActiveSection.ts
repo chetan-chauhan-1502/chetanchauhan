@@ -15,7 +15,7 @@ export function useActiveSection() {
         const rect = section.getBoundingClientRect();
 
         // ✅ trigger when section reaches top + 80px offset
-        if (rect.top <= 80 && rect.bottom >= 80) {
+        if (rect.top <= 85 && rect.bottom >= 85) {
           current = section.id;
         }
       });
