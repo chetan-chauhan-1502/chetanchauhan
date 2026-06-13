@@ -1,26 +1,157 @@
 @import "tailwindcss";
 
+/* ==========================
+   THEME VARIABLES
+========================== */
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #09090b;
+
+  --card: #ffffff;
+  --card-foreground: #09090b;
+
+  --border: #e4e4e7;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
 }
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+
+  --card: #111111;
+  --card-foreground: #fafafa;
+
+  --border: #27272a;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+}
+
+/* ==========================
+   TAILWIND VARIABLES
+========================== */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ==========================
+   GLOBAL
+========================== */
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
+
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ==========================
+   TEXT GRADIENT
+========================== */
+
+.text-gradient {
+  background: linear-gradient(135deg, #000000 0%, #525252 50%, #a1a1aa 100%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 50%, #71717a 100%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==========================
+   GLASS EFFECT
+========================== */
+
+.glass {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dark .glass {
+  background: rgba(15, 15, 15, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn-primary {
+  background: #000;
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.dark .btn-primary {
+  background: white;
+  color: black;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #71717a;
+}
+
+/* ==========================
+   SELECTION
+========================== */
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+.dark ::selection {
+  background: #fff;
+  color: #000;
 }
