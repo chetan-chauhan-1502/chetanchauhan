@@ -4,7 +4,7 @@ export const PROJECTS = [
     description:
       "Premium restaurant and catering website featuring modern UI design, responsive layouts, optimized performance, SEO-friendly architecture, and smooth user experience.",
 
-    image: "/projects/somoorish.png",
+    image: "/projects/Somoorish.png",
 
     tech: ["React", "Tailwind CSS", "bootstrap"],
 
@@ -65,7 +65,7 @@ export const SKILLS = [
   },
   {
     name: "Sass & SCSS",
-    image: "/skills/sass.png",
+    image: "/skills/Sass.png",
   },
   {
     name: "React JS",
