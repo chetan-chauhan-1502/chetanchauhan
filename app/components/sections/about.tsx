@@ -77,7 +77,7 @@ export default function About() {
               </div>
 
               <div className="rounded-2xl border border-border p-5">
-                <h4 className="text-3xl font-black">1+</h4>
+                <h4 className="text-3xl font-black">2.5+</h4>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Years Experience
                 </p>
