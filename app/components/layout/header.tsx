@@ -1,23 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useActiveSection } from "@/app/hooks/useActiveSection";
 import Link from "next/link";
 import ThemeToggle from "./themeToggle";
-
-const links = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Education", href: "#education" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
-];
+import { homeNavLinks } from "@/app/home/home.controller";
 
 export default function Header() {
-  const activeSection = useActiveSection();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   // ✅ lock body scroll when drawer open
@@ -46,22 +37,22 @@ export default function Header() {
 
           {/* Desktop Menu */}
           <nav className="hidden items-center gap-8 md:flex">
-            {links.map((link) => {
-              const section = link.href.replace("#", "");
+            {homeNavLinks.map((link) => {
+              const isActive = pathname === link.href;
 
               return (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={`relative text-sm font-medium transition-all duration-300 ${
-                    activeSection === section
+                    isActive
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {link.name}
 
-                  {activeSection === section && (
+                  {isActive && (
                     <span className="absolute -bottom-2 left-0 h-0.5 w-full rounded-full bg-foreground" />
                   )}
                 </Link>
@@ -110,8 +101,8 @@ export default function Header() {
           </div>
 
           <nav className="flex flex-col gap-3">
-            {links.map((link) => {
-              const section = link.href.replace("#", "");
+            {homeNavLinks.map((link) => {
+              const isActive = pathname === link.href;
 
               return (
                 <Link
@@ -119,7 +110,7 @@ export default function Header() {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`rounded-xl px-4 py-3 text-sm font-medium transition-all ${
-                    activeSection === section
+                    isActive
                       ? "bg-foreground text-background"
                       : "hover:bg-accent"
                   }`}
