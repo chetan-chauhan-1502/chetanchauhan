@@ -32,7 +32,7 @@ export default function About() {
           lg:text-6xl
           "
         >
-          About Me
+          About Chetan Chauhan
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">

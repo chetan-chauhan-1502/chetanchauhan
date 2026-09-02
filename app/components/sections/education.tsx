@@ -42,7 +42,7 @@ export default function Education() {
             lg:text-6xl
             "
           >
-            Education Journey
+            Education
           </h2>
 
           <p

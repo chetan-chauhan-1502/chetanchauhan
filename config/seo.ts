@@ -23,12 +23,24 @@ export function buildMetadata({
     : SITE_CONFIG.title;
   const pageDescription = description || SITE_CONFIG.description;
   const pageKeywords = keywords || SITE_CONFIG.keywords;
-  const fullCanonical = `${SITE_CONFIG.url}${canonicalUrl.startsWith("/") ? canonicalUrl : `/${canonicalUrl}`}`;
+  const normalizedCanonical =
+    canonicalUrl === "/"
+      ? "/"
+      : canonicalUrl.startsWith("/")
+        ? canonicalUrl
+        : `/${canonicalUrl}`;
+  const fullCanonical = `${SITE_CONFIG.url.replace(/\/$/, "")}${normalizedCanonical}`;
 
   return {
     title: pageTitle,
     description: pageDescription,
     keywords: pageKeywords,
+    authors: [{ name: SITE_CONFIG.author.name, url: SITE_CONFIG.author.url }],
+    creator: SITE_CONFIG.author.name,
+    publisher: SITE_CONFIG.author.name,
+    verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : undefined,
     metadataBase: new URL(SITE_CONFIG.url),
     alternates: {
       canonical: fullCanonical,
@@ -47,7 +59,7 @@ export function buildMetadata({
         },
       ],
       locale: "en_US",
-      type: "profile",
+      type: "website",
     },
     twitter: {
       card: "summary_large_image",

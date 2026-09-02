@@ -36,7 +36,7 @@ export default function ProjectCard({
       <div className="relative h-56 overflow-hidden">
         <Image
           src={image}
-          alt={title}
+          alt={`${title} project by Chetan Chauhan`}
           fill
           className="
           object-cover
@@ -100,6 +100,7 @@ export default function ProjectCard({
           <Link
             href={liveUrl}
             target="_blank"
+            rel="noopener noreferrer"
             className="
             flex
             items-center

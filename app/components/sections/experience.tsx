@@ -32,7 +32,7 @@ export default function Experience() {
           lg:text-6xl
           "
         >
-          Work Experience
+          Experience
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">

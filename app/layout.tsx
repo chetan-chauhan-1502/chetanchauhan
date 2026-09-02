@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist } from "next/font/google";
 
 import "./globals.css";
@@ -42,25 +43,26 @@ export default function RootLayout({
     ],
   };
 
-  const profilePageSchema = {
+  const websiteSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    dateCreated: "2026-01-01T00:00:00Z",
-    dateModified: new Date().toISOString(),
-    mainEntity: personSchema,
+    "@type": "WebSite",
+    name: SITE_CONFIG.name,
+    url: SITE_CONFIG.url,
+    description: SITE_CONFIG.description,
+    publisher: personSchema,
   };
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
+      <body className={geist.className}>
+        <Script
+          id="portfolio-schema"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(profilePageSchema),
+            __html: JSON.stringify([personSchema, websiteSchema]),
           }}
         />
-      </head>
-      <body className={geist.className}>
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Header />

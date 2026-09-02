@@ -22,7 +22,7 @@ export default function Skills() {
           sm:text-5xl
           "
         >
-          Skills & Technologies
+          Skills
         </h2>
 
         <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">

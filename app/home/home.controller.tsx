@@ -13,7 +13,6 @@ export type HomeNavLink = {
 };
 
 export const homeNavLinks: HomeNavLink[] = [
-  { name: "Home", href: "/home" },
   { name: "About", href: "/about" },
   { name: "Experience", href: "/experience" },
   { name: "Education", href: "/education" },
@@ -26,6 +25,12 @@ export function HomeContent() {
   return (
     <>
       <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Education />
+      <Contact />
       <ScrollToTop />
     </>
   );

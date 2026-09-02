@@ -5,7 +5,15 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "./themeToggle";
-import { homeNavLinks } from "@/app/home/home.controller";
+
+const homeNavLinks = [
+  { name: "About", href: "/about" },
+  { name: "Experience", href: "/experience" },
+  { name: "Education", href: "/education" },
+  { name: "Skills", href: "/skills" },
+  { name: "Projects", href: "/projects" },
+  { name: "Contact", href: "/contact" },
+];
 
 export default function Header() {
   const pathname = usePathname();
@@ -30,13 +38,16 @@ export default function Header() {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-6">
           {/* Logo */}
           <Link href="/">
-            <h1 className="bg-linear-to-r from-foreground via-zinc-500 to-foreground bg-clip-text text-2xl font-black text-transparent">
+            <span className="bg-linear-to-r from-foreground via-zinc-500 to-foreground bg-clip-text text-2xl font-black text-transparent">
               CHETAN
-            </h1>
+            </span>
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav
+            aria-label="Main navigation"
+            className="hidden items-center gap-8 md:flex"
+          >
             {homeNavLinks.map((link) => {
               const isActive = pathname === link.href;
 
@@ -66,6 +77,9 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
+              type="button"
+              aria-label="Open navigation menu"
+              aria-expanded={isOpen}
               onClick={() => setIsOpen(true)}
               className="flex h-11 w-11 items-center justify-center rounded-xl border border-border md:hidden"
             >
@@ -91,8 +105,10 @@ export default function Header() {
           }`}
         >
           <div className="mb-8 flex items-center justify-between">
-            <h2 className="font-bold">Menu</h2>
+            <p className="font-bold">Menu</p>
             <button
+              type="button"
+              aria-label="Close navigation menu"
               onClick={() => setIsOpen(false)}
               className="flex h-10 w-10 items-center justify-center rounded-lg border border-border"
             >
@@ -100,7 +116,7 @@ export default function Header() {
             </button>
           </div>
 
-          <nav className="flex flex-col gap-3">
+          <nav aria-label="Mobile navigation" className="flex flex-col gap-3">
             {homeNavLinks.map((link) => {
               const isActive = pathname === link.href;
 

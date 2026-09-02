@@ -1,5 +1,5 @@
-import { HomeContent } from "./home.controller";
+import { permanentRedirect } from "next/navigation";
 
-export default function HomePage() {
-  return <HomeContent />;
+export default function HomeRedirectPage() {
+  permanentRedirect("/");
 }

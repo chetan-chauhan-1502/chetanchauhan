@@ -1,5 +1,23 @@
-import { redirect } from "next/navigation";
+import ScrollToTop from "./components/scrollToTop";
+import About from "./components/sections/about";
+import Contact from "./components/sections/contact";
+import Education from "./components/sections/education";
+import Experience from "./components/sections/experience";
+import Hero from "./components/sections/hero";
+import Projects from "./components/sections/projects";
+import Skills from "./components/sections/skills";
 
 export default function Page() {
-  redirect("/home");
+  return (
+    <>
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Education />
+      <Contact />
+      <ScrollToTop />
+    </>
+  );
 }

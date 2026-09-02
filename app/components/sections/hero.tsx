@@ -29,21 +29,8 @@ export default function Hero() {
           xl:text-8xl
           "
         >
-          Chetan Chauhan
+          Chetan Chauhan — Front-End Developer
         </h1>
-
-        <h2
-          className="
-          mt-5
-          text-xl
-          font-semibold
-          text-muted-foreground
-          sm:text-2xl
-          lg:text-3xl
-          "
-        >
-          Frontend Developer
-        </h2>
 
         <p
           className="

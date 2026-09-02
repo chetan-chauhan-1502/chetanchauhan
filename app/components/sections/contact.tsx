@@ -65,7 +65,7 @@ export default function Contact() {
           lg:text-6xl
           "
         >
-          Contact Me
+          Contact Chetan Chauhan
         </h2>
 
         <p
