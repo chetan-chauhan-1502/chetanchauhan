@@ -34,13 +34,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-6">
           {/* Logo */}
           <Link href="/">
-            <span className="bg-linear-to-r from-foreground via-zinc-500 to-foreground bg-clip-text text-2xl font-black text-transparent">
-              CHETAN
-            </span>
+            <span className="text-2xl font-black text-foreground">CHETAN</span>
           </Link>
 
           {/* Desktop Menu */}
@@ -128,7 +126,7 @@ export default function Header() {
                   className={`rounded-xl px-4 py-3 text-sm font-medium transition-all ${
                     isActive
                       ? "bg-foreground text-background"
-                      : "hover:bg-accent"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
                   }`}
                 >
                   {link.name}

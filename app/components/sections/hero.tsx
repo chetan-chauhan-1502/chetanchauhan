@@ -7,23 +7,14 @@ export default function Hero() {
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
     >
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-20 h-150 w-150 -translate-x-1/2 rounded-full bg-zinc-500/10 blur-[160px]" />
-      </div>
-
       <div className="mx-auto max-w-6xl text-center">
         <h1
           className="
           mt-8
-          bg-linear-to-r
-          from-foreground
-          via-zinc-500
-          to-foreground
-          bg-clip-text
           text-5xl
           font-black
           tracking-tight
-          text-transparent
+          text-foreground
           sm:text-6xl
           lg:text-7xl
           xl:text-8xl

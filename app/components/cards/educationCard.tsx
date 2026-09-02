@@ -22,31 +22,14 @@ export default function EducationCard({
       rounded-3xl
       border
       border-border
-      bg-card/80
+      bg-card
       p-8
-      backdrop-blur-xl
       transition-all
       duration-500
       hover:-translate-y-2
-      hover:border-zinc-500/30
-      hover:shadow-2xl
+      hover:border-foreground
       "
     >
-      <div
-        className="
-        absolute
-        inset-0
-        bg-linear-to-r
-        from-transparent
-        via-zinc-500/5
-        to-transparent
-        opacity-0
-        transition-opacity
-        duration-500
-        group-hover:opacity-100
-        "
-      />
-
       <div className="relative z-10">
         <div className="flex items-start gap-5">
           <div
@@ -71,14 +54,9 @@ export default function EducationCard({
           <div className="flex-1">
             <h3
               className="
-              bg-linear-to-r
-              from-foreground
-              via-zinc-500
-              to-foreground
-              bg-clip-text
               text-xl
               font-bold
-              text-transparent
+              text-foreground
               "
             >
               {degree}

@@ -21,31 +21,15 @@ export default function ExperienceCard({
       overflow-hidden
       rounded-3xl
       border
-      border-border/60
-      bg-card/70
+      border-border
+      bg-card
       p-8
-      backdrop-blur-xl
       transition-all
       duration-500
       hover:-translate-y-2
-      hover:shadow-2xl
+      hover:border-foreground
       "
     >
-      <div
-        className="
-        absolute
-        inset-0
-        bg-linear-to-r
-        from-transparent
-        via-zinc-500/10
-        to-transparent
-        opacity-0
-        transition-all
-        duration-500
-        group-hover:opacity-100
-        "
-      />
-
       <div className="relative z-10">
         <div className="flex items-start gap-5">
           <div
@@ -70,14 +54,9 @@ export default function ExperienceCard({
           <div className="flex-1">
             <h3
               className="
-              bg-linear-to-r
-              from-foreground
-              via-zinc-500
-              to-foreground
-              bg-clip-text
               text-xl
               font-bold
-              text-transparent
+              text-foreground
               "
             >
               {role}

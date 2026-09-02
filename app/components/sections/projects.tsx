@@ -20,14 +20,9 @@ export default function Projects() {
 
         <h2
           className="
-          bg-linear-to-r
-          from-foreground
-          via-zinc-500
-          to-foreground
-          bg-clip-text
           text-4xl
           font-black
-          text-transparent
+          text-foreground
           sm:text-5xl
           "
         >

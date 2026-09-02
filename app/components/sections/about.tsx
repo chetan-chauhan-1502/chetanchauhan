@@ -20,14 +20,9 @@ export default function About() {
 
         <h2
           className="
-          bg-linear-to-r
-          from-foreground
-          via-zinc-500
-          to-foreground
-          bg-clip-text
           text-4xl
           font-black
-          text-transparent
+          text-foreground
           sm:text-5xl
           lg:text-6xl
           "
@@ -48,9 +43,8 @@ export default function About() {
             rounded-3xl
             border
             border-border
-            bg-card/50
+            bg-card
             p-8
-            backdrop-blur
             "
           >
             <h3 className="mb-6 text-2xl font-bold">
@@ -112,7 +106,7 @@ export default function About() {
             transition-all
             duration-300
             hover:-translate-y-2
-            hover:shadow-xl
+            hover:border-foreground
             "
           >
             <Code2
@@ -138,7 +132,7 @@ export default function About() {
             transition-all
             duration-300
             hover:-translate-y-2
-            hover:shadow-xl
+            hover:border-foreground
             "
           >
             <Laptop
@@ -164,7 +158,7 @@ export default function About() {
             transition-all
             duration-300
             hover:-translate-y-2
-            hover:shadow-xl
+            hover:border-foreground
             "
           >
             <Globe
@@ -190,7 +184,7 @@ export default function About() {
             transition-all
             duration-300
             hover:-translate-y-2
-            hover:shadow-xl
+            hover:border-foreground
             "
           >
             <FolderGit2
@@ -216,7 +210,7 @@ export default function About() {
             transition-all
             duration-300
             hover:-translate-y-2
-            hover:shadow-xl
+            hover:border-foreground
             "
           >
             <Rocket
@@ -242,7 +236,7 @@ export default function About() {
             transition-all
             duration-300
             hover:-translate-y-2
-            hover:shadow-xl
+            hover:border-foreground
             "
           >
             <Sparkles

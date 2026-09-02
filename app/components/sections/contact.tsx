@@ -3,22 +3,6 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export default function Contact() {
   return (
     <section id="contact" className="relative mx-auto max-w-7xl px-6 py-24">
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div
-          className="
-          absolute
-          left-1/2
-          top-0
-          h-87.5
-          w-87.5
-          -translate-x-1/2
-          rounded-full
-          bg-zinc-500/10
-          blur-[120px]
-          "
-        />
-      </div>
-
       <div className="mb-16 text-center">
         <div
           className="
@@ -28,10 +12,9 @@ export default function Contact() {
           rounded-full
           border
           border-border
-          bg-card/50
+          bg-card
           px-4
           py-2
-          backdrop-blur-sm
           "
         >
           <div className="h-2 w-2 rounded-full bg-zinc-500" />
@@ -52,15 +35,10 @@ export default function Contact() {
         <h2
           className="
           mt-6
-          bg-linear-to-r
-          from-foreground
-          via-zinc-500
-          to-foreground
-          bg-clip-text
           text-4xl
           font-black
           tracking-tight
-          text-transparent
+          text-foreground
           sm:text-5xl
           lg:text-6xl
           "
@@ -86,9 +64,8 @@ export default function Contact() {
         rounded-4xl
         border
         border-border
-        bg-card/50
+        bg-card
         p-8
-        backdrop-blur-sm
         "
       >
         <h3 className="text-3xl font-black">Let&apos;s Work Together</h3>
@@ -107,12 +84,12 @@ export default function Contact() {
             rounded-3xl
             border
             border-border
-            bg-background/50
+            bg-background
             p-6
             transition-all
             duration-300
             hover:-translate-y-2
-            hover:shadow-xl
+            hover:border-foreground
             "
           >
             <div
@@ -143,12 +120,12 @@ export default function Contact() {
             rounded-3xl
             border
             border-border
-            bg-background/50
+            bg-background
             p-6
             transition-all
             duration-300
             hover:-translate-y-2
-            hover:shadow-xl
+            hover:border-foreground
             "
           >
             <div
@@ -177,12 +154,12 @@ export default function Contact() {
             rounded-3xl
             border
             border-border
-            bg-background/50
+            bg-background
             p-6
             transition-all
             duration-300
             hover:-translate-y-2
-            hover:shadow-xl
+            hover:border-foreground
             "
           >
             <div

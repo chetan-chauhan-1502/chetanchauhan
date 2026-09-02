@@ -17,31 +17,14 @@ export default function SkillCard({ skill }: SkillCardProps) {
       rounded-3xl
       border
       border-border
-      bg-card/50
+      bg-card
       p-6
-      backdrop-blur-sm
       transition-all
       duration-500
       hover:-translate-y-2
-      hover:border-zinc-500/50
-      hover:shadow-2xl
+      hover:border-foreground
       "
     >
-      <div
-        className="
-        absolute
-        inset-0
-        bg-linear-to-br
-        from-transparent
-        via-zinc-500/5
-        to-transparent
-        opacity-0
-        transition-opacity
-        duration-500
-        group-hover:opacity-100
-        "
-      />
-
       <div className="relative z-10 text-center">
         <div
           className="
@@ -72,14 +55,9 @@ export default function SkillCard({ skill }: SkillCardProps) {
         <h3
           className="
           mt-5
-          bg-linear-to-r
-          from-foreground
-          via-zinc-500
-          to-foreground
-          bg-clip-text
           text-lg
           font-bold
-          text-transparent
+          text-foreground
           "
         >
           {skill.name}

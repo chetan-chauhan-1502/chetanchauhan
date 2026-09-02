@@ -20,12 +20,12 @@
   --background: #09090b;
   --foreground: #fafafa;
 
-  --card: #111111;
+  --card: #18181b;
   --card-foreground: #fafafa;
 
   --border: #27272a;
   --muted: #18181b;
-  --muted-foreground: #a1a1aa;
+  --muted-foreground: #71717a;
 }
 
 /* ==========================
@@ -72,38 +72,18 @@ body {
 }
 
 /* ==========================
-   TEXT GRADIENT
-========================== */
-
-.text-gradient {
-  background: linear-gradient(135deg, #000000 0%, #525252 50%, #a1a1aa 100%);
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.dark .text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 50%, #71717a 100%);
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* ==========================
    GLASS EFFECT
 ========================== */
 
 .glass {
   backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgb(255 255 255 / 80%);
+  border: 1px solid rgb(228 228 231 / 80%);
 }
 
 .dark .glass {
-  background: rgba(15, 15, 15, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgb(0 0 0 / 80%);
+  border: 1px solid rgb(39 39 42 / 80%);
 }
 
 /* ==========================
@@ -111,8 +91,8 @@ body {
 ========================== */
 
 .btn-primary {
-  background: #000;
-  color: white;
+  background: var(--foreground);
+  color: var(--background);
 
   transition: all 0.3s ease;
 }
@@ -122,8 +102,8 @@ body {
 }
 
 .dark .btn-primary {
-  background: white;
-  color: black;
+  background: #ffffff;
+  color: #000000;
 }
 
 /* ==========================
@@ -135,7 +115,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #404040;
+  background: #27272a;
   border-radius: 999px;
 }
 
@@ -147,11 +127,11 @@ body {
    SELECTION
 ========================== */
 ::selection {
-  background: #000;
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
 }
 
 .dark ::selection {
-  background: #fff;
-  color: #000;
+  background: #ffffff;
+  color: #000000;
 }

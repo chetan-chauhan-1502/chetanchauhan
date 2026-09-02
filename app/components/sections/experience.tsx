@@ -20,14 +20,9 @@ export default function Experience() {
 
         <h2
           className="
-          bg-linear-to-r
-          from-foreground
-          via-zinc-500
-          to-foreground
-          bg-clip-text
           text-4xl
           font-black
-          text-transparent
+          text-foreground
           sm:text-5xl
           lg:text-6xl
           "
@@ -76,7 +71,7 @@ export default function Experience() {
                 border-4
                 border-background
                 bg-zinc-500
-                shadow-lg
+                
                 md:left-1/2
                 md:-translate-x-1/2
                 "

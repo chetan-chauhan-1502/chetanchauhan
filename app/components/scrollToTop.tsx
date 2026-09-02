@@ -49,7 +49,7 @@ export default function ScrollToTop() {
         duration-300
         hover:-translate-y-1
         hover:scale-105
-        hover:shadow-2xl
+        hover:bg-muted
         cursor-pointer
         ${
           visible

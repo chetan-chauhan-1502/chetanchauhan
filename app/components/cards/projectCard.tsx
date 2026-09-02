@@ -25,12 +25,11 @@ export default function ProjectCard({
       rounded-3xl
       border
       border-border
-      bg-card/50
-      backdrop-blur-sm
+      bg-card
       transition-all
       duration-500
       hover:-translate-y-2
-      hover:shadow-2xl
+      hover:border-foreground
       "
     >
       <div className="relative h-56 overflow-hidden">
@@ -45,30 +44,14 @@ export default function ProjectCard({
           group-hover:scale-110
           "
         />
-
-        <div
-          className="
-          absolute
-          inset-0
-          bg-linear-to-t
-          from-black/70
-          via-black/20
-          to-transparent
-          "
-        />
       </div>
 
       <div className="p-6">
         <h3
           className="
-          bg-linear-to-r
-          from-foreground
-          via-zinc-500
-          to-foreground
-          bg-clip-text
           text-xl
           font-bold
-          text-transparent
+          text-foreground
           "
         >
           {title}

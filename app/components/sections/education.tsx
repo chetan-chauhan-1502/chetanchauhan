@@ -4,10 +4,6 @@ import EducationCard from "../cards/educationCard";
 export default function Education() {
   return (
     <section id="education" className="relative overflow-hidden py-24 lg:py-32">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-20 h-100 w-100 -translate-x-1/2 rounded-full bg-zinc-500/10 blur-[120px]" />
-      </div>
-
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 text-center">
           <span
@@ -30,14 +26,9 @@ export default function Education() {
           <h2
             className="
             mt-6
-            bg-linear-to-r
-            from-foreground
-            via-zinc-500
-            to-foreground
-            bg-clip-text
             text-4xl
             font-black
-            text-transparent
+            text-foreground
             sm:text-5xl
             lg:text-6xl
             "
@@ -70,10 +61,7 @@ export default function Education() {
             top-0
             h-full
             w-px
-            bg-linear-to-b
-            from-transparent
-            via-border
-            to-transparent
+            bg-border
             md:left-1/2
             "
           />
@@ -99,8 +87,6 @@ export default function Education() {
                   border-4
                   border-background
                   bg-zinc-500
-                  shadow-lg
-                  shadow-zinc-500/30
                   md:left-1/2
                   md:-translate-x-1/2
                   "
