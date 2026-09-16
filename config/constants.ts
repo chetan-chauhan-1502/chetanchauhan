@@ -23,8 +23,8 @@ export const SITE_CONFIG = {
     "UI UX Designer",
   ],
   socials: {
-    github: "https://github.com/chetanchauhan",
-    linkedin: "https://linkedin.com/in/chetanchauhan",
+    github: "https://github.com/chetan-chauhan-1502",
+    linkedin: "https://www.linkedin.com/in/chetan-chauhan-frontend/",
     twitter: "https://twitter.com/chetanchauhan",
   },
   author: {

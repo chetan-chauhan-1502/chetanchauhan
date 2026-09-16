@@ -8,5 +8,5 @@ export const skillsPageMeta = {
 };
 
 export function SkillsContent() {
-  return <Skills />;
+  return <Skills fullPage />;
 }
