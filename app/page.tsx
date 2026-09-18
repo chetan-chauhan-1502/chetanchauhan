@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/config/seo";
-import { HomeContent } from "./home/home.controller";
+import { HomeContent } from "./home.controller";
 
 export const metadata: Metadata = buildMetadata({
   title: "Front-End Developer Portfolio",

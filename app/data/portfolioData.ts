@@ -8,7 +8,7 @@ export const PROJECTS = [
 
     tech: ["React", "Tailwind CSS", "bootstrap"],
 
-    liveUrl: "https://somoorish.com.au",
+    liveUrl: "https://somoorish.vercel.app/",
   },
 
   {
@@ -20,7 +20,7 @@ export const PROJECTS = [
 
     tech: ["React", "Tailwind CSS", "bootstrap"],
 
-    liveUrl: "https://pintola.in",
+    liveUrl: "https://pintola.vercel.app/",
   },
   {
     title: "Travelodeal",
