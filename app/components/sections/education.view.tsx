@@ -3,7 +3,7 @@ import EducationCard from "../cards/educationCard";
 
 export default function Education() {
   return (
-    <section id="education" className="relative overflow-hidden py-24 lg:py-32">
+    <div className="relative overflow-hidden py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-20 text-center">
           <span
@@ -105,6 +105,6 @@ export default function Education() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

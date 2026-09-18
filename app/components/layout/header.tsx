@@ -1,25 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "./themeToggle";
-
-const homeNavLinks = [
-  { name: "About", href: "/about" },
-  { name: "Experience", href: "/experience" },
-  { name: "Education", href: "/education" },
-  { name: "Skills", href: "/skills" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
-];
+import { useActiveSection } from "@/app/hooks/useActiveSection";
+import { NAV_LINKS } from "@/config/constants";
 
 export default function Header() {
-  const pathname = usePathname();
+  const activeSection = useActiveSection();
   const [isOpen, setIsOpen] = useState(false);
 
-  // ✅ lock body scroll when drawer open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -36,18 +27,16 @@ export default function Header() {
     <>
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-6">
-          {/* Logo */}
           <Link href="/">
             <span className="text-2xl font-black text-foreground">CHETAN</span>
           </Link>
 
-          {/* Desktop Menu */}
           <nav
             aria-label="Main navigation"
             className="hidden items-center gap-8 md:flex"
           >
-            {homeNavLinks.map((link) => {
-              const isActive = pathname === link.href;
+            {NAV_LINKS.map((link) => {
+              const isActive = activeSection === link.href.slice(1);
 
               return (
                 <Link
@@ -69,11 +58,9 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right Side */}
           <div className="flex items-center gap-3">
             <ThemeToggle />
 
-            {/* Mobile Menu Button */}
             <button
               type="button"
               aria-label="Open navigation menu"
@@ -87,7 +74,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
       <div
         className={`fixed inset-0 z-50 transition-all duration-300 md:hidden ${
           isOpen
@@ -97,7 +83,7 @@ export default function Header() {
         onClick={() => setIsOpen(false)}
       >
         <div
-          onClick={(e) => e.stopPropagation()}
+          onClick={(event) => event.stopPropagation()}
           className={`absolute right-0 top-0 h-full w-72 border-l border-border bg-background p-6 transition-transform duration-300 ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
@@ -115,8 +101,8 @@ export default function Header() {
           </div>
 
           <nav aria-label="Mobile navigation" className="flex flex-col gap-3">
-            {homeNavLinks.map((link) => {
-              const isActive = pathname === link.href;
+            {NAV_LINKS.map((link) => {
+              const isActive = activeSection === link.href.slice(1);
 
               return (
                 <Link

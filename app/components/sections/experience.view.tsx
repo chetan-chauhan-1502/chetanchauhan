@@ -3,7 +3,7 @@ import ExperienceCard from "../cards/experienceCard";
 
 export default function Experience() {
   return (
-    <section id="experience" className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
+    <div className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
       <div className="mb-20 text-center">
         <p
           className="
@@ -89,6 +89,6 @@ export default function Experience() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

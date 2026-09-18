@@ -47,46 +47,16 @@ export const PROJECTS = [
 ];
 
 export const SKILLS = [
-  {
-    name: "HTML",
-    image: "/skills/html.png",
-  },
-  {
-    name: "CSS",
-    image: "/skills/css.jpg",
-  },
-  {
-    name: "JavaScript",
-    image: "/skills/javaScript.png",
-  },
-  {
-    name: "Bootstrap",
-    image: "/skills/bootstrap.jpg",
-  },
-  {
-    name: "Sass & SCSS",
-    image: "/skills/Sass.png",
-  },
-  {
-    name: "React JS",
-    image: "/skills/react.png",
-  },
-  {
-    name: "Next.js",
-    image: "/skills/nextJS.jpg",
-  },
-  {
-    name: "TypeScript",
-    image: "/skills/typeScript.png",
-  },
-  {
-    name: "Tailwind CSS",
-    image: "/skills/tailwind.jpg",
-  },
-  {
-    name: "GitHub",
-    image: "/skills/github.png",
-  },
+  { name: "HTML" },
+  { name: "CSS" },
+  { name: "JavaScript" },
+  { name: "Bootstrap" },
+  { name: "Sass & SCSS" },
+  { name: "React JS" },
+  { name: "Next.js" },
+  { name: "TypeScript" },
+  { name: "Tailwind CSS" },
+  { name: "GitHub" },
 ];
 
 export const EXPERIENCE = [

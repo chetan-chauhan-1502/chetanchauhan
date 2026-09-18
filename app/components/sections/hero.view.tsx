@@ -3,10 +3,7 @@ import { ArrowRight, Mail } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
-    >
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6">
       <div className="mx-auto max-w-6xl text-center">
         <h1
           className="

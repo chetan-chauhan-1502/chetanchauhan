@@ -9,10 +9,7 @@ import {
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32"
-    >
+    <div className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
       <div className="mb-20 text-center">
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-muted-foreground">
           Introduction
@@ -252,6 +249,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

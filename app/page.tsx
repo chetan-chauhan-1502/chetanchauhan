@@ -1,23 +1,14 @@
-import ScrollToTop from "./components/scrollToTop";
-import About from "./components/sections/about";
-import Contact from "./components/sections/contact";
-import Education from "./components/sections/education";
-import Experience from "./components/sections/experience";
-import Hero from "./components/sections/hero";
-import Projects from "./components/sections/projects";
-import Skills from "./components/sections/skills";
+import type { Metadata } from "next";
+import { buildMetadata } from "@/config/seo";
+import { HomeContent } from "./home/home.controller";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Front-End Developer Portfolio",
+  description:
+    "Explore Chetan Chauhan's frontend development experience, education, technical skills, featured projects, and contact information.",
+  canonicalUrl: "/",
+});
 
 export default function Page() {
-  return (
-    <>
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Education />
-      <Contact />
-      <ScrollToTop />
-    </>
-  );
+  return <HomeContent />;
 }

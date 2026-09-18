@@ -2,7 +2,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative mx-auto max-w-7xl px-6 py-24">
+    <div className="relative mx-auto max-w-7xl px-6 py-24">
       <div className="mb-16 text-center">
         <div
           className="
@@ -186,6 +186,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

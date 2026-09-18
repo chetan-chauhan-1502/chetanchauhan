@@ -18,10 +18,10 @@ export default function ProjectCard({
   liveUrl,
 }: ProjectCardProps) {
   return (
-    <div className="group relative flex flex-col justify-between overflow-hidden rounded-4xl border border-border bg-card/80 p-6 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500/40 hover:bg-card hover:shadow-2xl hover:shadow-emerald-500/10 sm:p-8">
-      <div className="pointer-events-none absolute -right-24 -top-24 h-48 w-48 rounded-full bg-emerald-500/20 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+    <div className="group relative flex flex-col justify-between overflow-hidden rounded-4xl border border-border bg-card/80 p-6 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 hover:border-foreground hover:bg-card hover:shadow-2xl hover:shadow-foreground/10 sm:p-8">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-48 w-48 rounded-full bg-foreground/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
 
-      <h3 className="text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-emerald-500 sm:text-3xl">
+      <h3 className="text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-muted-foreground sm:text-3xl">
         {title}
       </h3>
 
@@ -65,7 +65,7 @@ export default function ProjectCard({
           href={liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group/link inline-flex shrink-0 items-center gap-1.5 text-xs font-medium text-foreground transition hover:text-emerald-500"
+          className="group/link inline-flex shrink-0 items-center gap-1.5 text-xs font-medium text-foreground transition hover:text-muted-foreground"
         >
           <span>Live Preview</span>
           <ExternalLink
