@@ -25,7 +25,7 @@ export const SITE_CONFIG = {
   socials: {
     github: "https://github.com/chetan-chauhan-1502",
     linkedin: "https://www.linkedin.com/in/chetan-chauhan-frontend/",
-    twitter: "https://twitter.com/chetanchauhan",
+    twitter: "https://x.com/chetan_1502",
   },
   author: {
     name: "Chetan Chauhan",
