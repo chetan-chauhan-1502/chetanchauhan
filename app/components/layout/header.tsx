@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowUpRight, Sparkles, Send } from "lucide-react";
+import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import ThemeToggle from "./themeToggle";
 import { useActiveSection } from "@/app/hooks/useActiveSection";
@@ -58,7 +58,7 @@ export default function Header() {
           }`}
         >
           {/* Subtle top reflection line for Apple-style glass */}
-          <div className="pointer-events-none absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
+          <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-foreground/15 to-transparent" />
 
           {/* Left: Brand Monogram & Name */}
           <Link
@@ -114,7 +114,7 @@ export default function Header() {
 
           {/* Right: Actions (CTA + Theme + Hamburger) */}
           <div className="flex items-center gap-2">
-            <div className="h-4 w-[1px] bg-border hidden sm:block" />
+            <div className="h-4 w-px bg-border hidden sm:block" />
 
             {/* Theme Toggle Button */}
             <div className="rounded-full p-0.5">

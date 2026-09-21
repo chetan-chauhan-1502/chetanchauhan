@@ -46,17 +46,38 @@ export const PROJECTS = [
   },
 ];
 
-export const SKILLS = [
-  { name: "HTML" },
-  { name: "CSS" },
-  { name: "JavaScript" },
-  { name: "Bootstrap" },
-  { name: "Sass & SCSS" },
-  { name: "React JS" },
-  { name: "Next.js" },
-  { name: "TypeScript" },
-  { name: "Tailwind CSS" },
-  { name: "GitHub" },
+export interface Skill {
+  name: string;
+  category: "frontend" | "styling" | "tools" | "cloud";
+}
+
+export const SKILLS: Skill[] = [
+  // Frontend
+  { name: "React JS", category: "frontend" },
+  { name: "Next.js", category: "frontend" },
+  { name: "TypeScript", category: "frontend" },
+  { name: "JavaScript (ES6+)", category: "frontend" },
+  { name: "HTML5", category: "frontend" },
+  { name: "CSS3", category: "frontend" },
+
+  // Styling & UI
+  { name: "Tailwind CSS", category: "styling" },
+  { name: "shadcn/ui", category: "styling" },
+  { name: "React Hook Form", category: "styling" },
+  { name: "Sass & SCSS", category: "styling" },
+  { name: "Bootstrap", category: "styling" },
+
+  // Tools & AI
+  { name: "Cursor AI", category: "tools" },
+  { name: "Antigravity", category: "tools" },
+  { name: "VS Code", category: "tools" },
+  { name: "GitHub Copilot", category: "tools" },
+  { name: "GitHub", category: "tools" },
+  { name: "Git", category: "tools" },
+
+  // Cloud & DevOps
+  { name: "Vercel", category: "cloud" },
+  { name: "AWS", category: "cloud" },
 ];
 
 export const EXPERIENCE = [

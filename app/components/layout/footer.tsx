@@ -8,10 +8,10 @@ export default function Footer() {
   return (
     <footer className="relative mt-24 border-t border-border/80 bg-card/40 backdrop-blur-md overflow-hidden">
       {/* Top Ambient Highlight Line */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-foreground/20 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-foreground/20 to-transparent" />
 
       {/* Giant Typography Watermark */}
-      <div className="pointer-events-none absolute -bottom-10 right-4 select-none font-black text-[18vw] leading-none text-foreground/[0.02] dark:text-foreground/[0.03] -z-10">
+      <div className="pointer-events-none absolute -bottom-10 right-4 select-none font-black text-[18vw] leading-none text-foreground/2 dark:text-foreground/3 -z-10">
         CHETAN
       </div>
 
@@ -34,13 +34,13 @@ export default function Footer() {
               and Next.js ecosystems.
             </p>
 
-            {/* Live Availability Badge */}
+            {/* Live Availability Badge (Monochrome) */}
             <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-muted/40 px-3 py-1 text-xs font-medium text-muted-foreground">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-foreground opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-foreground" />
               </span>
-              <span className="text-[11px] text-foreground font-semibold">
+              <span className="text-[11px] font-semibold text-foreground">
                 Available for new opportunities
               </span>
             </div>
