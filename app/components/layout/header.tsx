@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import ThemeToggle from "./themeToggle";
 import { useActiveSection } from "@/app/hooks/useActiveSection";
 import { NAV_LINKS } from "@/config/constants";
+import logo from "../../../public/chetan-chauhan-frontend-developer.jpg";
 
 export default function Header() {
   const rawActiveSection = useActiveSection();
@@ -58,18 +60,26 @@ export default function Header() {
           }`}
         >
           {/* Subtle top reflection line for Apple-style glass */}
-          <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-foreground/15 to-transparent" />
+          <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-foreground/15 to-transparent" />
 
           {/* Left: Brand Monogram & Name */}
           <Link
             href="/"
-            className="group flex items-center gap-2.5 pl-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground rounded-full"
+            className="cursor-pointer group flex items-center gap-2.5 pl-1 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground"
           >
-            <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-foreground text-background text-xs font-black transition-transform duration-300 group-hover:scale-105">
-              CC
+            <div className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border/80 bg-muted/40 shadow-xs transition-transform duration-300 group-hover:scale-105 group-hover:border-foreground/40">
+              <Image
+                src={logo}
+                alt="Chetan Chauhan - Frontend Developer"
+                title="Chetan Chauhan Frontend Developer"
+                fill
+                priority
+                className="object-cover"
+                sizes="32px"
+              />
             </div>
 
-            <span className="text-sm font-extrabold tracking-wider text-foreground transition-colors group-hover:opacity-80">
+            <span className="text-sm font-black tracking-wider text-foreground transition-colors group-hover:opacity-80">
               CHETAN CHAUHAN
             </span>
           </Link>
@@ -90,7 +100,7 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   onMouseEnter={() => setHoveredNav(link.name)}
-                  className={`relative px-4 py-1.5 text-xs font-semibold tracking-wide transition-colors duration-200 rounded-full ${
+                  className={`cursor-pointer relative px-4 py-1.5 text-xs font-semibold tracking-wide transition-colors duration-200 rounded-full ${
                     isActive
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
@@ -112,7 +122,7 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right: Actions (CTA + Theme + Hamburger) */}
+          {/* Right: Actions (Theme Toggle + Hamburger) */}
           <div className="flex items-center gap-2">
             <div className="h-4 w-px bg-border hidden sm:block" />
 
@@ -129,7 +139,7 @@ export default function Header() {
               }
               aria-expanded={isOpen}
               onClick={() => setIsOpen(!isOpen)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-muted/60 backdrop-blur-sm transition-transform active:scale-90 md:hidden"
+              className="cursor-pointer flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-muted/60 backdrop-blur-sm transition-transform active:scale-90 md:hidden"
             >
               {isOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
@@ -156,8 +166,17 @@ export default function Header() {
         >
           {/* Header row inside popup */}
           <div className="flex items-center justify-between pb-3 border-b border-border">
-            <div className="flex items-center gap-2">
-              <Sparkles size={16} className="text-foreground" />
+            <div className="flex items-center gap-2.5">
+              <div className="relative h-6 w-6 overflow-hidden rounded-full border border-border/80">
+                <Image
+                  src={logo}
+                  alt="Chetan Chauhan - Frontend Developer"
+                  title="Chetan Chauhan Frontend Developer"
+                  fill
+                  className="object-cover"
+                  sizes="24px"
+                />
+              </div>
               <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                 Navigation
               </span>
@@ -166,7 +185,7 @@ export default function Header() {
               type="button"
               aria-label="Close navigation menu"
               onClick={() => setIsOpen(false)}
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-border hover:bg-muted"
+              className="cursor-pointer flex h-8 w-8 items-center justify-center rounded-full border border-border hover:bg-muted"
             >
               <X size={15} />
             </button>
@@ -187,7 +206,7 @@ export default function Header() {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   style={{ transitionDelay: `${idx * 30}ms` }}
-                  className={`flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all ${
+                  className={`cursor-pointer flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all ${
                     isActive
                       ? "bg-foreground text-background font-semibold shadow-xs"
                       : "text-muted-foreground hover:bg-muted hover:text-foreground"

@@ -1,7 +1,16 @@
 "use client";
 
-import { useRef, useState, MouseEvent } from "react";
-import { Code2, Globe, FolderGit2, Rocket, Sparkles } from "lucide-react";
+import {
+  CheckCircle2,
+  Code2,
+  FolderGit2,
+  Globe,
+  Rocket,
+  Sparkles,
+} from "lucide-react";
+import Image from "next/image";
+import { MouseEvent, useRef, useState } from "react";
+import logo from "../../../public/chetan-chauhan-frontend-developer.jpg";
 
 interface SpotlightCardProps {
   children: React.ReactNode;
@@ -84,7 +93,7 @@ export default function About() {
       <div className="mb-20 text-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-muted/40 px-3.5 py-1.5 text-xs font-semibold text-muted-foreground backdrop-blur-md">
           <span className="font-mono text-[11px] uppercase tracking-wider">
-            Introduction
+            Introduction // Profile
           </span>
         </div>
 
@@ -99,23 +108,51 @@ export default function About() {
       </div>
 
       <div className="grid items-start gap-10 lg:grid-cols-12">
-        {/* Left Column: Bio Card + Highlighted Experience Stats (Span 6) */}
+        {/* Left Column: Interactive Profile Card with SEO-Optimized Photo (Span 6) */}
         <div className="lg:col-span-6">
-          <SpotlightCard className="p-8 sm:p-9">
-            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground transition-transform duration-300 group-hover:translate-x-1">
-              Hi, I&apos;m Chetan Chauhan 👋
-            </h3>
+          <SpotlightCard className="p-7 sm:p-9">
+            {/* Profile Image & Identification Section */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+              <div className="relative h-28 w-28 sm:h-32 sm:w-32 shrink-0 overflow-hidden rounded-2xl border-2 border-border/80 bg-muted/40 shadow-xl transition-all duration-300 group-hover:scale-105 group-hover:border-foreground/50">
+                <Image
+                  src={logo}
+                  alt="Chetan Chauhan - Frontend Developer"
+                  title="Chetan Chauhan Frontend Developer"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 640px) 112px, 128px"
+                />
+              </div>
 
-            <p className="mt-5 leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-foreground/90">
-              I am a Frontend Developer from India who enjoys creating modern
-              websites and web applications using React, Next.js, TypeScript,
-              and Tailwind CSS.
-            </p>
+              <div className="flex-1 text-center sm:text-left">
+                <div className="inline-flex items-center gap-1.5 rounded-md bg-muted/40 px-2 py-0.5 font-mono text-[10px] font-semibold text-foreground uppercase tracking-wider mb-2">
+                  <CheckCircle2 size={11} className="text-foreground" />
+                  Frontend Specialist
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground transition-transform duration-300 group-hover:translate-x-1">
+                  Chetan Chauhan
+                </h3>
+                <p className="mt-1 font-mono text-xs text-muted-foreground">
+                  React • Next.js • TypeScript • Tailwind
+                </p>
+              </div>
+            </div>
 
-            <p className="mt-4 leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-foreground/90">
-              My focus is building responsive, scalable, and performance-driven
-              applications with clean code and premium user experiences.
-            </p>
+            {/* Bio Prose */}
+            <div className="mt-6 space-y-3">
+              <p className="leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-foreground/90 text-sm sm:text-base">
+                I am a Frontend Developer from India dedicated to crafting
+                responsive, scalable, and accessible web applications with clean
+                code and intuitive user interactions.
+              </p>
+
+              <p className="leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-foreground/90 text-sm sm:text-base">
+                My workflow is focused on turning complex design systems and
+                ideas into fluid, high-performance web products with optimal
+                Core Web Vitals and SEO readiness.
+              </p>
+            </div>
 
             {/* Metrics Strip */}
             <div className="mt-8 grid grid-cols-2 gap-4 border-t border-border/50 pt-6">
@@ -129,7 +166,7 @@ export default function About() {
               <div className="cursor-pointer rounded-2xl border border-border/70 bg-muted/20 p-4 transition-all duration-300 hover:border-foreground/30 hover:bg-muted/40 hover:-translate-y-1">
                 <h4 className="text-3xl font-black text-foreground">100%</h4>
                 <p className="mt-1 text-xs font-medium text-muted-foreground">
-                  Client Focused
+                  Frontend Focused
                 </p>
               </div>
             </div>
