@@ -1,6 +1,10 @@
-import { GraduationCap, CalendarDays } from "lucide-react";
+"use client";
+
+import { useRef, useState, MouseEvent } from "react";
+import { CalendarDays, School } from "lucide-react";
 
 interface EducationCardProps {
+  index: number;
   degree: string;
   institute: string;
   year: string;
@@ -13,82 +17,66 @@ export default function EducationCard({
   year,
   description,
 }: EducationCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [coords, setCoords] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    setCoords({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
     <div
-      className="
-      group
-      relative
-      overflow-hidden
-      rounded-3xl
-      border
-      border-border
-      bg-card
-      p-8
-      transition-all
-      duration-500
-      hover:-translate-y-2
-      hover:border-foreground
-      "
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-border/80 bg-card/60 p-6 sm:p-7 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-foreground/30 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/25"
     >
-      <div className="relative z-10">
-        <div className="flex items-start gap-5">
-          <div
-            className="
-            flex
-            h-14
-            w-14
-            items-center
-            justify-center
-            rounded-2xl
-            border
-            border-border
-            bg-background
-            transition-transform
-            duration-300
-            group-hover:scale-110
-            "
-          >
-            <GraduationCap size={24} />
-          </div>
+      {/* Mouse Follow Radial Spotlight */}
+      <div
+        className="pointer-events-none absolute -inset-px transition-opacity duration-300"
+        style={{
+          opacity: isHovered ? 1 : 0,
+          background: `radial-gradient(400px circle at ${coords.x}px ${coords.y}px, color-mix(in srgb, var(--foreground) 10%, transparent), transparent 70%)`,
+        }}
+      />
 
-          <div className="flex-1">
-            <h3
-              className="
-              text-xl
-              font-bold
-              text-foreground
-              "
-            >
-              {degree}
-            </h3>
+      {/* Top Header Row */}
+      <div className="relative z-10 flex items-center justify-between">
+        <div className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-muted/40 px-3 py-1 font-mono text-[11px] text-muted-foreground">
+          <CalendarDays size={12} className="text-foreground" />
+          <span>{year}</span>
+        </div>
+      </div>
 
-            <p className="mt-1 text-muted-foreground">{institute}</p>
+      {/* Degree Title & Institution */}
+      <div className="relative z-10 mt-4">
+        <h3 className="text-lg sm:text-xl font-bold tracking-tight text-foreground transition-transform duration-200 group-hover:translate-x-0.5">
+          {degree}
+        </h3>
 
-            <div
-              className="
-              mt-4
-              inline-flex
-              items-center
-              gap-2
-              rounded-full
-              border
-              border-border
-              bg-background
-              px-4
-              py-2
-              text-sm
-              text-muted-foreground
-              "
-            >
-              <CalendarDays size={14} />
-              {year}
-            </div>
-          </div>
+        <div className="mt-1.5 flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+          <School size={14} className="shrink-0 text-foreground/70" />
+          <span className="font-medium">{institute}</span>
         </div>
 
-        <p className="mt-6 leading-relaxed text-muted-foreground">
+        <p className="mt-4 text-xs sm:text-sm leading-relaxed text-muted-foreground border-t border-border/50 pt-4">
           {description}
         </p>
+      </div>
+
+      {/* Bottom Subtle Progress Beam */}
+      <div className="relative z-10 mt-6 h-1 w-full overflow-hidden rounded-full bg-muted/40">
+        <div className="h-full w-0 rounded-full bg-foreground transition-all duration-500 ease-out group-hover:w-full" />
       </div>
     </div>
   );

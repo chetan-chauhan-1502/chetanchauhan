@@ -28,8 +28,7 @@ export default function Skills() {
 
       {/* Section Header */}
       <div className="mb-14 flex flex-col items-center text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-muted/40 px-3.5 py-1.5 text-xs font-semibold text-muted-foreground backdrop-blur-md transition-transform hover:scale-105">
-          <Terminal size={13} className="text-foreground" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-muted/40 px-3.5 py-1.5 text-xs font-semibold text-muted-foreground backdrop-blur-md">
           <span className="font-mono text-[11px] uppercase tracking-wider">
             Technical Stack &amp; Workflow
           </span>
@@ -57,7 +56,7 @@ export default function Skills() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-300 ${
+                className={`cursor-pointer relative flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-300 ${
                   isActive
                     ? "bg-foreground text-background shadow-xs font-semibold"
                     : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"

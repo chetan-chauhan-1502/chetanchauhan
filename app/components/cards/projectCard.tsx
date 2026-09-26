@@ -78,7 +78,7 @@ export default function ProjectCard({
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Open live preview of ${title}`}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background/80 text-foreground transition-all duration-300 hover:scale-110 hover:bg-foreground hover:text-background"
+          className="cursor-pointer flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background/80 text-foreground transition-all duration-300 hover:scale-110 hover:bg-foreground hover:text-background"
         >
           <ArrowUpRight size={16} />
         </Link>
@@ -112,7 +112,7 @@ export default function ProjectCard({
           href={liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative block aspect-16/10 w-full overflow-hidden bg-background"
+          className="cursor-pointer relative block aspect-16/10 w-full overflow-hidden bg-background"
         >
           <Image
             src={image}
@@ -131,7 +131,7 @@ export default function ProjectCard({
           {tech.map((item) => (
             <span
               key={item}
-              className="rounded-lg border border-border/60 bg-muted/40 px-2.5 py-1 font-mono text-[10px] font-medium text-muted-foreground transition-colors group-hover:border-foreground/20 group-hover:text-foreground"
+              className="cursor-pointer rounded-lg border border-border/60 bg-muted/40 px-2.5 py-1 font-mono text-[10px] font-medium text-muted-foreground transition-all duration-300 hover:border-foreground/40 hover:bg-muted/80 hover:text-foreground"
             >
               {item}
             </span>
@@ -142,7 +142,7 @@ export default function ProjectCard({
           href={liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-xs font-semibold text-foreground transition-colors hover:opacity-75"
+          className="cursor-pointer inline-flex items-center gap-1 text-xs font-semibold text-foreground transition-colors hover:opacity-75"
         >
           <span>Visit Site</span>
           <ArrowUpRight size={13} />

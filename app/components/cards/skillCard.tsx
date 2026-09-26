@@ -35,7 +35,7 @@ export default function SkillCard({ skill, index = 1 }: SkillCardProps) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-foreground/40 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/30"
+      className="group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-2xl border border-border/70 bg-card/60 p-5 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-foreground/40 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/30"
     >
       {/* Radial Spotlight Beam */}
       <div

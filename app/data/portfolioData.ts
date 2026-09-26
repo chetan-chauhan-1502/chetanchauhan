@@ -80,20 +80,30 @@ export const SKILLS: Skill[] = [
   { name: "AWS", category: "cloud" },
 ];
 
-export const EXPERIENCE = [
-  {
-    role: "Frontend Developer Intern",
-    company: "Maxgen Technologies Pvt. Ltd.",
-    period: "2023 - 2024",
-    description:
-      "Developed modern, responsive, and user-friendly web applications using React, Bootstrap, and Tailwind CSS. Collaborated on creating visually appealing interfaces while focusing on performance, usability, and responsive design principles.",
-  },
+export interface ExperienceItem {
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+  isCurrent?: boolean;
+}
+
+export const EXPERIENCE: ExperienceItem[] = [
   {
     role: "Frontend Developer",
     company: "Mazda Consultancy Services Pvt. Ltd.",
     period: "2024 - Present",
+    isCurrent: true,
     description:
       "Designed and developed real-world business projects, including Somoorish and Pintola. Built responsive user interfaces, optimized website performance, implemented SEO best practices, and developed reusable frontend components using Next.js, React, TypeScript, and Tailwind CSS.",
+  },
+  {
+    role: "Frontend Developer Intern",
+    company: "Maxgen Technologies Pvt. Ltd.",
+    period: "2023 - 2024",
+    isCurrent: false,
+    description:
+      "Developed modern, responsive, and user-friendly web applications using React, Bootstrap, and Tailwind CSS. Collaborated on creating visually appealing interfaces while focusing on performance, usability, and responsive design principles.",
   },
 ];
 
