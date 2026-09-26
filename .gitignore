@@ -1,3 +1,18 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js Build Output
+/.next/
+/out/
+/build
+/dist
+/dist-ssr
+
 # Logs
 logs
 *.log
@@ -7,13 +22,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-.next
-dist
-dist-ssr
+# Environment Variables (Critical - never commit real keys)
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
 *.local
 
-# Editor directories and files
+# Vercel & Netlify
+.vercel
+.netlify
+.turbo
+
+# Editor & OS Files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -23,3 +46,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.tsbuildinfo
+next-env.d.ts
