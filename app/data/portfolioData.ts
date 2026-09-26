@@ -2,50 +2,68 @@ export const PROJECTS = [
   {
     title: "Somoorish",
     description:
-      "Premium restaurant and catering website featuring modern UI design, responsive layouts, optimized performance, SEO-friendly architecture, and smooth user experience.",
-
-    image: "/projects/Somoorish.png",
-
-    tech: ["React", "Tailwind CSS", "bootstrap"],
-
+      "Premium confectionery and catering website featuring modern UI design, responsive layouts, optimized performance, SEO-friendly architecture, and smooth user experience.",
+    image: "/projects/chetan-chauhan-frontend-somoorish-catering.png",
+    tech: ["React", "Tailwind CSS", "Bootstrap"],
     liveUrl: "https://somoorish.vercel.app/",
   },
-
   {
     title: "Pintola",
     description:
       "High-performance eCommerce-style frontend inspired by the Pintola brand, featuring product showcases, responsive design, optimized user experience, and modern web development practices.",
-
-    image: "/projects/pintola.png",
-
-    tech: ["React", "Tailwind CSS", "bootstrap"],
-
+    image: "/projects/chetan-chauhan-frontend-pintola-ecommerce.png",
+    tech: ["React", "Tailwind CSS", "Bootstrap"],
     liveUrl: "https://pintola.vercel.app/",
   },
   {
     title: "Travelodeal",
     description:
       "Travel booking and holiday deals platform with responsive design, optimized performance, intuitive user interface, and seamless browsing experience for travel packages and destinations.",
-
-    image: "/projects/travelodeal.png",
-
+    image: "/projects/chetan-chauhan-frontend-travelodeal-portal.png",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-
     liveUrl: "https://www.travelodeal.co.uk/",
   },
   {
     title: "CCMovies",
     description:
       "Modern movie streaming and discovery platform built with Next.js, featuring categorized content, SEO optimization, responsive design, fast performance, and an intuitive user experience.",
-
-    image: "/projects/ccmovies.png",
-
-    tech: ["Next.js", "Tailwind CSS"],
-
+    image: "/projects/chetan-chauhan-frontend-ccmovies-streaming.png",
+    tech: ["Next.js", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://ccmovies.vercel.app/",
   },
+  {
+    title: "CC Shopping",
+    description:
+      "Interactive eCommerce storefront featuring product catalog browsing, dynamic category filters, cart state management, and a clean, responsive checkout workflow.",
+    image: "/projects/chetan-chauhan-frontend-cc-shopping-store.png",
+    tech: ["React", "Tailwind CSS", "JavaScript"],
+    liveUrl: "https://ccshopping.vercel.app/",
+  },
+  {
+    title: "CC Fresh Fruits",
+    description:
+      "Vibrant organic grocery and fruit delivery web platform highlighting seasonal produce, modern card grids, responsive product displays, and smooth animations.",
+    image: "/projects/chetan-chauhan-frontend-fresh-fruits-app.png",
+    tech: ["React", "Tailwind CSS", "Bootstrap"],
+    liveUrl: "https://ccfreshfruits.vercel.app/",
+  },
+  {
+    title: "CC ToDo List",
+    description:
+      "Streamlined productivity and task management web application offering instant task creation, completion tracking, persistent storage, and clutter-free interface design.",
+    image: "/projects/chetan-chauhan-frontend-todo-list-app.png",
+    tech: ["React", "Tailwind CSS", "TypeScript"],
+    liveUrl: "https://cctodolist.vercel.app/",
+  },
+  {
+    title: "CC Age Calculator",
+    description:
+      "Precision utility web tool computing exact chronological age in years, months, and days with strict date boundary validations and instant calculations.",
+    image: "/projects/chetan-chauhan-frontend-age-calculator-tool.png",
+    tech: ["React", "JavaScript", "Tailwind CSS"],
+    liveUrl: "https://ccagecalculator.vercel.app/",
+  },
 ];
-
 export interface Skill {
   name: string;
   category: "frontend" | "styling" | "tools" | "cloud";
