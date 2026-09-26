@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist } from "next/font/google";
 
 import "./globals.css";
@@ -11,6 +10,7 @@ import { buildMetadata } from "@/config/seo";
 
 const geist = Geist({
   subsets: ["latin"],
+  variable: "--font-geist",
 });
 
 export const metadata: Metadata = buildMetadata();
@@ -20,49 +20,68 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const personSchema = {
+  const jsonLdGraph = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Chetan Chauhan",
-    url: SITE_CONFIG.url,
-    image: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
-    jobTitle: "Front-End Developer",
-    knowsAbout: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-      "Web Performance",
-      "Search Engine Optimization (SEO)",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${SITE_CONFIG.url}/#person`,
+        name: "Chetan Chauhan",
+        jobTitle: "Front-End Developer",
+        description: SITE_CONFIG.description,
+        url: SITE_CONFIG.url,
+        image: {
+          "@type": "ImageObject",
+          url: `${SITE_CONFIG.url}${SITE_CONFIG.ogImage}`,
+          caption: "Chetan Chauhan - Front-End Developer",
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Ahmedabad",
+          addressRegion: "Gujarat",
+          addressCountry: "India",
+        },
+        knowsAbout: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "JavaScript",
+          "Tailwind CSS",
+          "Web Performance Optimization",
+          "Search Engine Optimization (SEO)",
+          "Front-End Engineering",
+        ],
+        sameAs: [
+          SITE_CONFIG.socials.github,
+          SITE_CONFIG.socials.linkedin,
+          SITE_CONFIG.socials.twitter,
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_CONFIG.url}/#website`,
+        url: SITE_CONFIG.url,
+        name: SITE_CONFIG.name,
+        description: SITE_CONFIG.description,
+        publisher: {
+          "@id": `${SITE_CONFIG.url}/#person`,
+        },
+      },
     ],
-    sameAs: [
-      SITE_CONFIG.socials.github,
-      SITE_CONFIG.socials.linkedin,
-      SITE_CONFIG.socials.twitter,
-    ],
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: SITE_CONFIG.name,
-    url: SITE_CONFIG.url,
-    description: SITE_CONFIG.description,
-    publisher: personSchema,
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={geist.className}>
-        <Script
+    <html lang="en" suppressHydrationWarning className={geist.variable}>
+      <head>
+        <script
           id="portfolio-schema"
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([personSchema, websiteSchema]),
+            __html: JSON.stringify(jsonLdGraph),
           }}
         />
+      </head>
+      <body className={geist.className}>
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Header />

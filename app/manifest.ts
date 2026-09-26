@@ -8,10 +8,26 @@ export default function manifest(): MetadataRoute.Manifest {
     description: SITE_CONFIG.description,
     start_url: "/",
     display: "standalone",
-    background_color: SITE_CONFIG.backgroundColor,
-    theme_color: SITE_CONFIG.themeColor,
+    background_color: SITE_CONFIG.backgroundColor ?? "#09090b",
+    theme_color: SITE_CONFIG.themeColor ?? "#09090b",
     icons: [
-      { src: "/chetan-og.svg", sizes: "1200x630", type: "image/svg+xml" },
+      {
+        src: "/chetan-chauhan-frontend-developer.jpg",
+        sizes: "192x192",
+        type: "image/jpeg",
+        purpose: "maskable",
+      },
+      {
+        src: "/chetan-chauhan-frontend-developer.jpg",
+        sizes: "512x512",
+        type: "image/jpeg",
+        purpose: "any",
+      },
+      {
+        src: "/chetan-og.svg",
+        sizes: "1200x630",
+        type: "image/svg+xml",
+      },
     ],
   };
 }

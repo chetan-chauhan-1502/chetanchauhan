@@ -1,4 +1,12 @@
-export const PROJECTS = [
+export interface ProjectItem {
+  title: string;
+  description: string;
+  image: string;
+  tech: string[];
+  liveUrl: string;
+}
+
+export const PROJECTS: ProjectItem[] = [
   {
     title: "Somoorish",
     description:
@@ -64,6 +72,7 @@ export const PROJECTS = [
     liveUrl: "https://ccagecalculator.vercel.app/",
   },
 ];
+
 export interface Skill {
   name: string;
   category: "frontend" | "styling" | "tools" | "cloud";
@@ -87,15 +96,14 @@ export const SKILLS: Skill[] = [
 
   // Tools & AI
   { name: "Cursor AI", category: "tools" },
-  { name: "Antigravity", category: "tools" },
   { name: "VS Code", category: "tools" },
   { name: "GitHub Copilot", category: "tools" },
   { name: "GitHub", category: "tools" },
   { name: "Git", category: "tools" },
 
-  // Cloud & DevOps
+  // Cloud & Hosting
   { name: "Vercel", category: "cloud" },
-  { name: "AWS", category: "cloud" },
+  { name: "Netlify", category: "cloud" },
 ];
 
 export interface ExperienceItem {
@@ -125,7 +133,14 @@ export const EXPERIENCE: ExperienceItem[] = [
   },
 ];
 
-export const EDUCATION = [
+export interface EducationItem {
+  degree: string;
+  institute: string;
+  year: string;
+  description: string;
+}
+
+export const EDUCATION: EducationItem[] = [
   {
     degree: "Bachelor of Computer Applications (BCA)",
     institute: "Maharaja Krishnakumarsinhji Bhavnagar University",
@@ -133,7 +148,6 @@ export const EDUCATION = [
     description:
       "Graduated with 59.91%. Studied software development, programming fundamentals, database management systems, web technologies, and computer applications.",
   },
-
   {
     degree: "Higher Secondary Certificate (HSC)",
     institute: "Shree Shayona Vidhyalaya, Botad",
@@ -141,7 +155,6 @@ export const EDUCATION = [
     description:
       "Completed Higher Secondary Education with 63.64%, focusing on academic excellence and foundational knowledge for higher studies.",
   },
-
   {
     degree: "Secondary School Certificate (SSC)",
     institute: "Shree Shayona Vidhyalaya, Botad",

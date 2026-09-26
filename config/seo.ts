@@ -19,17 +19,27 @@ export function buildMetadata({
   noIndex = false,
 }: MetadataProps = {}): Metadata {
   const pageTitle = title
-    ? `${title} | ${SITE_CONFIG.name}`
+    ? title.includes(SITE_CONFIG.name)
+      ? title
+      : `${title} | ${SITE_CONFIG.name}`
     : SITE_CONFIG.title;
+
   const pageDescription = description || SITE_CONFIG.description;
   const pageKeywords = keywords || SITE_CONFIG.keywords;
+
   const normalizedCanonical =
     canonicalUrl === "/"
       ? "/"
       : canonicalUrl.startsWith("/")
         ? canonicalUrl
         : `/${canonicalUrl}`;
-  const fullCanonical = `${SITE_CONFIG.url.replace(/\/$/, "")}${normalizedCanonical}`;
+
+  const baseUrl = SITE_CONFIG.url.replace(/\/$/, "");
+  const fullCanonical = `${baseUrl}${normalizedCanonical}`;
+
+  const resolvedOgImage = ogImage.startsWith("http")
+    ? ogImage
+    : `${baseUrl}${ogImage.startsWith("/") ? ogImage : `/${ogImage}`}`;
 
   return {
     title: pageTitle,
@@ -38,13 +48,13 @@ export function buildMetadata({
     authors: [{ name: SITE_CONFIG.author.name, url: SITE_CONFIG.author.url }],
     creator: SITE_CONFIG.author.name,
     publisher: SITE_CONFIG.author.name,
-    verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
-      : undefined,
-    metadataBase: new URL(SITE_CONFIG.url),
+    metadataBase: new URL(baseUrl),
     alternates: {
       canonical: fullCanonical,
     },
+    verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : undefined,
     openGraph: {
       title: pageTitle,
       description: pageDescription,
@@ -52,10 +62,10 @@ export function buildMetadata({
       siteName: SITE_CONFIG.name,
       images: [
         {
-          url: ogImage,
+          url: resolvedOgImage,
           width: 1200,
           height: 630,
-          alt: `${SITE_CONFIG.name} Portfolio Preview`,
+          alt: "Chetan Chauhan - Front-End Developer",
         },
       ],
       locale: "en_US",
@@ -65,7 +75,8 @@ export function buildMetadata({
       card: "summary_large_image",
       title: pageTitle,
       description: pageDescription,
-      images: [ogImage],
+      creator: "@chetan_1502",
+      images: [resolvedOgImage],
     },
     robots: {
       index: !noIndex,

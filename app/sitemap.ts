@@ -1,16 +1,24 @@
 import { MetadataRoute } from "next";
 import { SITE_CONFIG } from "@/config/constants";
+import { PROJECTS } from "@/app/data/portfolioData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = SITE_CONFIG.url;
-  const lastModified = new Date("2026-09-02");
+  const baseUrl = SITE_CONFIG.url.replace(/\/$/, "");
+  const lastModified = new Date();
 
-  const routes = ["/"];
+  // Root landing page entry with full image metadata for Google Image Search
+  const staticRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 1.0,
+      images: [
+        `${baseUrl}/chetan-chauhan-frontend-developer.jpg`,
+        ...PROJECTS.map((project) => `${baseUrl}${project.image}`),
+      ],
+    },
+  ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified,
-    changeFrequency: route === "/" ? "daily" : "monthly",
-    priority: 1.0,
-  }));
+  return staticRoutes;
 }
